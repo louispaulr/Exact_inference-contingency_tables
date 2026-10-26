@@ -3,7 +3,7 @@
 require(StratifiedSampling)
 
 library(StratifiedSampling)
-#  Construction of the 4x4x2 three-way table
+#  Construction of the data frame donn_som for 4x4x2 three-way table
 # The goal is to test the fit of model [12] [13] [23] of no third order interaction
 donn_som<-expand.grid(foll=c(10,20,30,60),init=c(10,20,30,60),trt=c(1,2))
 donn_som$y<-c(7,4,1,0,11,5,2,2,13,23,3,1,9,17,13,8,7,4,2,1,14,5,1,0,6,9,18,2,4,11,14,22)
@@ -37,7 +37,7 @@ for (i in (1:n)){
 #dim(A0)  23 7648
 # Selection probability vector \Pi ^{(1)}of Section 4.2
 prob<-rep((yhat/N), each=N)
-#  Construction of a matrix with B simulated vectors y^{(b)} 
+#  Construction of a matrix, res,  with B simulated vectors y^{(b)} 
 #  The function ffphase implements the flight phase of the cube as described in Section 4.2
 B=2000
 # B=2000 gives a 95% Monte Carlo margin of error of 1.96*sqrt(.05*.95/2000)=0.01 
